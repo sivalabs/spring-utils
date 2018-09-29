@@ -27,10 +27,9 @@
     </developers>
 
     <scm>
-        <connection>scm:git:git://github.com/sivalabs/spring-utils.git</connection>
-        <developerConnection>scm:git:ssh://github.com:sivalabs/spring-utils.git</developerConnection>
-        <url>http://github.com/sivalabs/spring-utils/tree/master</url>
-      <tag>spring-utils-0.0.1</tag>
+        <connection>scm:git:https://github.com/sivalabs/spring-utils.git</connection>
+        <developerConnection>scm:git:https://github.com/sivalabs/spring-utils.git</developerConnection>
+        <url>https://github.com/sivalabs/spring-utils</url>
   </scm>
 
     <distributionManagement>
