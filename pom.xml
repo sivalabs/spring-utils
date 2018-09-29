@@ -4,7 +4,7 @@
 
     <groupId>com.github.sivalabs</groupId>
     <artifactId>spring-utils</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <packaging>jar</packaging>
 
     <name>spring-utils</name>
@@ -30,7 +30,8 @@
         <connection>scm:git:git://github.com/sivalabs/spring-utils.git</connection>
         <developerConnection>scm:git:ssh://github.com:sivalabs/spring-utils.git</developerConnection>
         <url>http://github.com/sivalabs/spring-utils/tree/master</url>
-    </scm>
+      <tag>spring-utils-0.0.1</tag>
+  </scm>
 
     <distributionManagement>
         <snapshotRepository>
