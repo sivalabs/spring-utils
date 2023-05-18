@@ -1,14 +1,13 @@
-package com.github.sivalabs.springutils.aop;
+package io.github.sivalabs.springutils.aop;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-
-import java.util.Arrays;
-import java.util.stream.Collectors;
 
 /**
  * This is a Spring AOP Aspect to log method entry/exit
@@ -20,14 +19,15 @@ public class LoggingAspect {
 
     private static final Logger log = LoggerFactory.getLogger(LoggingAspect.class);
 
-    @Around("@within(com.github.sivalabs.springutils.aop.Loggable) || @annotation(com.github.sivalabs.springutils.aop.Loggable)")
+    @Around(
+            "@within(io.github.sivalabs.springutils.aop.Loggable) || @annotation(io.github.sivalabs.springutils.aop.Loggable)")
     public Object logMethodEntryExit(ProceedingJoinPoint pjp) throws Throwable {
 
         long start = System.currentTimeMillis();
 
         String className = "";
         String methodName = "";
-        if(log.isDebugEnabled()) {
+        if (log.isDebugEnabled()) {
             className = pjp.getSignature().getDeclaringTypeName();
             methodName = pjp.getSignature().getName();
 
@@ -43,12 +43,12 @@ public class LoggingAspect {
 
         Object result = pjp.proceed();
 
-        if(log.isDebugEnabled()) {
+        if (log.isDebugEnabled()) {
             long elapsedTime = System.currentTimeMillis() - start;
-            log.debug(String.format("Exiting method %s.%s; Execution time (ms): %s", className, methodName, elapsedTime));
+            log.debug(
+                    String.format("Exiting method %s.%s; Execution time (ms): %s", className, methodName, elapsedTime));
         }
 
         return result;
     }
 }
-

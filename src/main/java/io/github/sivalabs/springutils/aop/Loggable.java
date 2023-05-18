@@ -1,4 +1,5 @@
-package com.github.sivalabs.springutils.aop;
+package io.github.sivalabs.springutils.aop;
+
 import java.lang.annotation.*;
 
 /**
@@ -7,6 +8,4 @@ import java.lang.annotation.*;
 @Target({ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Inherited
-public @interface Loggable {
-}
-
+public @interface Loggable {}
