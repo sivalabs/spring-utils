@@ -137,18 +137,22 @@
                                         <stagingRepositories>target/staging-deploy</stagingRepositories>
                                     </sonatype>
                                 </mavenCentral>
-                                <!-- Legacy OSSRH
+                                <!--
+                                 Publishing snapshots to the Maven Central Portal requires an additional Nexus2 deployer
+                                 https://jreleaser.org/guide/latest/examples/maven/maven-central.html#_publishing_snapshots
+                                 -->
                                 <nexus2>
-                                    <maven-central>
-                                        <active>ALWAYS</active>
-                                        <url>https://s01.oss.sonatype.org/service/local</url>
-                                        <snapshotUrl>https://s01.oss.sonatype.org/content/repositories/snapshots/</snapshotUrl>
+                                    <snapshot-deploy>
+                                        <active>SNAPSHOT</active>
+                                        <snapshotUrl>https://central.sonatype.com/repository/maven-snapshots/</snapshotUrl>
+                                        <applyMavenCentralRules>true</applyMavenCentralRules>
+                                        <snapshotSupported>true</snapshotSupported>
                                         <closeRepository>true</closeRepository>
                                         <releaseRepository>true</releaseRepository>
                                         <stagingRepositories>target/staging-deploy</stagingRepositories>
-                                    </maven-central>
+                                    </snapshot-deploy>
                                 </nexus2>
-                                -->
+
                             </maven>
                         </deploy>
                     </jreleaser>
