@@ -12,14 +12,48 @@ This is a tiny utilities library with commonly used features in Spring applicati
 <dependency>
     <groupId>io.github.sivalabs</groupId>
     <artifactId>spring-utils</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.3</version>
+</dependency>
+
+<!-- To use SNAPSHOT version -->
+<repositories>
+    <repository>
+        <name>Central Portal Snapshots</name>
+        <id>central-portal-snapshots</id>
+        <url>https://central.sonatype.com/repository/maven-snapshots/</url>
+        <releases>
+            <enabled>false</enabled>
+        </releases>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+    </repository>
+</repositories>
+
+<dependency>
+    <groupId>io.github.sivalabs</groupId>
+    <artifactId>spring-utils</artifactId>
+    <version>0.0.4-SNAPSHOT</version>
 </dependency>
 ```
 
 **Gradle**
 
 ```groovy
-implementation 'io.github.sivalabs:spring-utils:0.0.2'
+implementation 'io.github.sivalabs:spring-utils:0.0.3'
+
+// To use SNAPSHOT version
+
+repositories {
+    mavenCentral()
+    //Groovy DSL
+    maven { url = "https://central.sonatype.com/repository/maven-snapshots" }
+    //Kotlin DSL
+    maven { url = uri("https://central.sonatype.com/repository/maven-snapshots/") }
+}
+
+implementation 'io.github.sivalabs:spring-utils:0.0.4-SNAPSHOT'
+
 ```
 
 ### LoggingAspect

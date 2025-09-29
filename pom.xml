@@ -152,7 +152,6 @@
                                         <stagingRepositories>target/staging-deploy</stagingRepositories>
                                     </snapshot-deploy>
                                 </nexus2>
-
                             </maven>
                         </deploy>
                     </jreleaser>
