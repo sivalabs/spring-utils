@@ -7,7 +7,7 @@
 
     <groupId>io.github.sivalabs</groupId>
     <artifactId>spring-utils</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>spring-utils</name>
@@ -131,11 +131,11 @@
                         <deploy>
                             <maven>
                                 <mavenCentral>
-                                    <sonatype>
-                                        <active>ALWAYS</active>
+                                    <release-deploy>
+                                        <active>RELEASE</active>
                                         <url>https://central.sonatype.com/api/v1/publisher</url>
                                         <stagingRepositories>target/staging-deploy</stagingRepositories>
-                                    </sonatype>
+                                    </release-deploy>
                                 </mavenCentral>
                                 <!--
                                  Publishing snapshots to the Maven Central Portal requires an additional Nexus2 deployer
